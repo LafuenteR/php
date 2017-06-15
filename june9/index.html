@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    div > ul, div > ul > li >ul {
+      display: inline-block;
+      list-style-type: none;
+    }
+    span{
+      color: red;
+      font-weight: bold;
+    }
+ 
+    td,span{
+     text-align: left;
+    }
+    </style>
+  </head>
+  <body>
+  <div class="container">
+  <h1>Sign up</h1>
+  <div>
+    <form name="nameForm" action="#" onsubmit="return validate();">
+        <table>
+          <tr>
+            <td><p>First Name</p></td>
+            <td><input type="text" id="first-name"></td>
+            <td><span id="first-name-span"></span></td>
+          </tr>
+           <tr>
+            <td><p>Last Name</p></td>
+            <td><input type="text" id="last-name"></td>
+            <td><span id="last-name-span"></span></td>
+          </tr>
+           <tr>
+            <td><p>Email</p></td>
+            <td><input type="email" id="email"></td>
+            <td><span id="email-span"></span></td>
+          </tr>
+           <tr>
+            <td><p>Password</p></td>
+            <td><input type="password" id="password"></td>
+            <td><span id="password-span"></span></td>
+          </tr>
+          <tr>
+            <td><p>Confirm Password</p></td>
+            <td><input type="password" id="password1"></td>
+            <td><span id="confirm-password-span"></span></td>
+          </tr>
+           <tr>
+            <td><p>Mobile Number</p></td>
+            <td><input type="number" id="mobile" minlength="11" maxlength="12"></td>
+            <td><span id="mobile-span"></span></td>
+          </tr>
+           <tr>
+            <td></td>
+            <td><input type="submit" value="Sign Up" id="sign-up-button"></td>
+          <!--   <td><button type="submit">Sign Up</button></td> -->
+          </tr>
+        </table>
+      </form>
+    </div>  
+  </div>
+ 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+        function validate(){
+          var first_name = document.getElementById('first-name').value;
+          var last_name = document.getElementById('last-name').value;
+          var email = document.getElementById('email').value;
+          var password = document.getElementById('password').value;
+          var password1 = document.getElementById('password1').value;
+          var mobile = document.getElementById('mobile').value;
+          
+
+          if(first_name.length<1){
+            document.getElementById('first-name-span').innerHTML = "Please enter your First name";
+          }else{
+            document.getElementById('first-name-span').innerHTML = " ✓ ";
+          }
+           if(last_name.length<1){
+            document.getElementById('last-name-span').innerHTML = "Please enter your Last name";
+          }else{
+            document.getElementById('last-name-span').innerHTML = " ✓ ";
+          }
+           if(email.length<1){
+            document.getElementById('email-span').innerHTML = "Please enter your email";
+          }else{
+             document.getElementById('email-span').innerHTML = " ✓ ";
+          }
+           if(password.length<1){
+            document.getElementById('password-span').innerHTML = "Please enter your Password";
+          }else{
+            document.getElementById('password-span').innerHTML = " ✓ ";
+          }
+           if((password!=password1) || (password1.length<1)){
+            document.getElementById('confirm-password-span').innerHTML = "Incorrect Password";
+          }else{
+             document.getElementById('confirm-password-span').innerHTML = " ✓ ";
+          }
+          if(mobile.length<1){
+            document.getElementById('mobile-span').innerHTML = "Please enter your mobile number";
+          }else{
+            document.getElementById('mobile-span').innerHTML = " ✓ ";
+          }
+          if((first_name.length>1) && (last_name.length>1) && (email.length>1) && (password.length>1) && ((password==password1) && (password1.length>1))  && (mobile.length>1)){
+                alert('yay');
+          }else{
+              alert("something's wrong");
+          }
+         
+
+          
+        }
+  </script>
+  </body>
+</html>
