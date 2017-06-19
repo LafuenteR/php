@@ -41,7 +41,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span> 
 		  		</button>
-              	<a class="navbar-brand" href="#">Shoe</a>
+              	<a class="navbar-brand" href="june16a.php">Shoe</a>
             </div>
             <div class="collapse navbar-collapse dropdown-content" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
@@ -131,32 +131,56 @@
         		// ];
         		$string = file_get_contents('users.json');
         		$users = json_decode($string, true);
-
-        		if(isset($_POST['submit'])){
-        			foreach ($users as $user) {
-        				if($_POST['username'] == $user['username'] && $_POST['password'] == $user['password']){
-        					header('location:june16a.php');
-        				}
+        		// if(isset($_POST['submit'])){
+        		// 	$new_user = [];
+        		// 	$new_user['username'] = $_POST['username'];
+        		// 	$new_user['password'] = $_POST['password'];
+        		// 	$users[] = $new_user;
+        		// 	$fp = fopen('users.json', 'w');
+        		// 	fwrite($fp, json_encode($users,JSON_PRETTY_PRINT));
+        		// 	fclose($fp);
+        		// }
+        		// if(isset($_POST['submit'])){
+        		// 	foreach ($users as $user) {
+        		// 		if($_POST['username'] == $user['username'] && $_POST['password'] == $user['password']){
+        		// 			header('location:june16a.php');
+        		// 		}
         		      
-        			}
+        		// 	}
         		}
-        		$register =[
-        			['name' => $_POST['name']],
-        			['username' => $_POST['username']],
-        			['email' => $_POST['email']],
-        			['password' => $_POST['password']]
-        		];
-        		$string = file_get_contents('users.json');
-        		$users = json_decode($string, true);
-        		if(isset($_POST['register'])){
-        			$new_user = [];
-        			$new_user['username'] = $_POST['username'];
-        			$new_user['password'] = $_POST['password'];
-        			$register[] = $new_user;
-        			$fp = fopen('users.json', 'w');
-        			fwrite($fp, json_encode($register,JSON_PRETTY_PRINT));
-        			fclose($fp);
-        		}
+        		// foreach ($users as $user) {
+        		
+        		// $name = $user['username'];
+        		// $password = $user['password'];	
+        		
+        		// }
+        		// if(isset($_POST['submit'])){
+        		// 	$new_user = [];
+        		// 	$new_user['username'] = $_POST['username'];
+        		// 	$new_user['password'] = $_POST['password'];
+        		// 	$user[] = $new_user;
+        		// 	$fp = fopen('users.json', 'w');
+        		// 	fwrite($fp, json_encode($users,JSON_PRETTY_PRINT));
+        		// 	fclose($fp);
+        		// }
+
+        		// $register =[
+        		// 	['name' => $_POST['name']],
+        		// 	['username' => $_POST['username']],
+        		// 	['email' => $_POST['email']],
+        		// 	['password' => $_POST['password']]
+        		// ];
+        		// $string = file_get_contents('users.json');
+        		// $users = json_decode($string, true);
+        		// if(isset($_POST['submit'])){
+        		// 	$new_user = [];
+        		// 	$new_user['username'] = $_POST['username'];
+        		// 	$new_user['password'] = $_POST['password'];
+        		// 	$user[] = $new_user;
+        		// 	$fp = fopen('users.json', 'w');
+        		// 	fwrite($fp, json_encode($register,JSON_PRETTY_PRINT));
+        		// 	fclose($fp);
+        		// }
         	?>
         </div>
         <footer>
