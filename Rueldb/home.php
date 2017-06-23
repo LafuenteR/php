@@ -35,9 +35,10 @@
     footer > a > img {
     	width: 100%;
     	height: 100%;
-    }.container-bottom{
-    	margin-bottom: 50px;
     }
+  /*  #container-hide{
+    	margin-bottom: 50px;
+    }*/
     #register-id, #change-password-id{
     	display: none;
     }
@@ -45,7 +46,10 @@
     	background-color: transparent;
     	margin-top: 10px;
     }
-
+    #file{
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
     </style>
 </head>
 <body>
@@ -80,30 +84,34 @@
       </div>
       <div class="modal-body">
       	<div class="container container-form">
-            <form id="register-id" method="POST" action="signup.php">
-        		<!-- Name: <br>
-        		<input type="text" name="name"> <br> -->
-        		Username: <br>
-        		<input type="text" name="username" required><br>
-        		Password: <br>
-        		<input type="password" name="password" required><br>
-        		Confirm Password: <br>
-        		<input type="password" name="confirm-password" required> <br><br>
-        		<input type="submit" name="register" value="Register" class="btn btn-info"><br>
-        		Already have an account? <a id="login-a" href="#">Log In</a>
-
-
-        	</form>
-        	<form id="login-id" method="POST" action="log_in.php">
-        		Username:<br>
-        		<input id="login-id" type="text" name="username" required><br>
-        		Password: <br>
-        		<input type="password" name="password" required><br><br>
-        		<input type="submit" value="Submit" name="submit_log" class="btn btn-info"><br>
-        		Don't have an account? <a id="register-a" href="#">Register</a><br>
-        		<a id="change-password-a" href="#">Change Password</a>
-        	</form>
-        	<form id="change-password-id" method="POST" action="changeP.php">
+            <form id="register-id" method="POST" action="">
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="pw2" placeholder="Confirm PAssword">
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-info" type="submit" name="register" placeholder="Register"><br>
+                    Already have an account? <a id="login-a" href="#">Log In</a>
+                </div>
+            </form>
+        	<form id="login-id" method="POST" action="">
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-info" type="submit" name="login" ><br>
+                    Don't have an account? <a id="register-a" href="#">Register</a>
+                </div>
+            </form>
+        	<!-- <form id="change-password-id" method="POST" action="changeP.php">
         		Username: <br>
         		<input type="text" name="username" required><br>
         		Current Password: <br>
@@ -114,10 +122,10 @@
         		<input type="password" name="conf-new-password" required><br><br>
         		<input type="submit" name="change-password" value="Change Password" class="btn btn-info"><br>
         		Back to <a href="#" id="back-to-login-a">Log In</a>
-        	</form>
+        	</form> -->
         	<?php 
-        		// require_once 'log_in.php';
-        	?>
+        	    // require_once 'log_in.php';
+        	?> 
         	</div>
       </div>
       <div class="modal-footer">
@@ -127,37 +135,41 @@
 
   </div>
 </div>
-        <div class="ads">
-        	<img src="logo.jpg">
+        <div class="ads clear">
+        	<img src="images/logo.jpg">
         </div>
 <?php 
 
 	display_content();
 
-	// require_once('june16a.php');
+	
 ?>
-
+<!-- require_once('june16a.php'); -->
 <footer>
-	<a href="http://smart.com.ph/Pages/gigasurf" target="_blank"><img src="smart.jpg"></a>
+	<a href="http://smart.com.ph/Pages/gigasurf" target="_blank"><img src="images/smart.jpg"></a>
 </footer>
 
 	<script type="text/javascript">
 			$("#register-a").click(function(){
 	    		$("#login-id").hide();
 	    		$("#register-id").show();
+	    		$("#change-password-id").hide();
 			});
 
 			$("#login-a").click(function(){
 	    		$("#register-id").hide();
 	    		$("#login-id").show();
+	    		$("#change-password-id").hide();
 			});
 			$("#change-password-a").click(function(){
 	    		$("#register-id").hide();
 	    		$("#login-id").hide();
+	    		$("#change-password-id").show();
 			});
 			$("#back-to-login-a").click(function(){
 	    		$("#login-id").show();
 	    		$("#register-id").hide();
+	    		$("#change-password-id").hide();
 			});
 
 	</script>

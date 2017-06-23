@@ -12,12 +12,12 @@ if(isset($_POST['change-password'])){
 
 	$index;
 
-	foreach($string as $key => $value) {
+	foreach($users as $key => $value) {
 		if($value['username'] == $username && $value['password'] == $current_password && $new_password == $new_conf_password){
 			$index = $key;
 		}
 	}
-	$users[index]['password'] = $new_password;
+	$users[$index]['password'] = $new_password;
 	$fp = fopen('users.json', 'w');
 	fwrite($fp, json_encode($users,JSON_PRETTY_PRINT));
 	fclose($fp);
